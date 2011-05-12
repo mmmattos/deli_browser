@@ -1,0 +1,10 @@
+{
+  "name": "Chrome Delicious bookmarks Browser Extension",
+  "version": "1.0",
+  "description": "This extension allows for browsing any delicious account with public bookmarks.",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "popup": "deli_browser.html"
+  },
+  "permissions": [ ]
+}
