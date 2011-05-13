@@ -1,3 +1,27 @@
+var ac_data;
+$(document).ready(function(){
+    $.ajax({ type:      "GET",
+             dataType:  "jsonp",
+             url:       "http://feeds.delicious.com/v2/json/tags"+
+                        ($("#_acct").val() != "" ? "/"+$("#_acct").val() : "") +
+                        "?count=3000",
+             success:   function(data) {
+                            $.each(data, function(key, val) {
+                                if (!ac_data) {
+                                    ac_data = key + " ";
+                                } else {
+                                    ac_data += key + " ";
+                                }
+                            });
+                            //alert("1:"+ac_data);
+                            $("#_tag").autocomplete(ac_data.split(" "));
+                        }
+    });
+});
+
+/*
+ * Get the urls from a Delicious accoutn for the given tags
+ */
 function goDeli(){
     $.ajax({ type:      "GET",
              dataType:  "jsonp",
@@ -16,33 +40,6 @@ function goDeli(){
     });	
 }
 
-
-function getDeliTags() {
-    $.ajax({ type:      "GET",
-             dataType:  "jsonp",
-             url:       "http://feeds.delicious.com/v2/json/tags"+
-                        ($("#_acct").val() != "" ? "/"+$("#_acct").val() : "") +
-                        "?count=20",
-             success:   function(data){
-                            //$("#delicious").empty();
-                            if (data.length > 0) {
-                                $.each(data, function(index, record) {
-                                    alert(record[0]);
-                                    //getA(record.d,record.u);
-                                });
-                             }
-                        }
-    });
-}
-
-/*
- * Prepares the autocomplete data from the tags feed content...
- */
-function getAcData() {
-
-
-
-}
 
 /*
  * Build an A element from the given delicious data...
