@@ -1,0 +1,13 @@
+README
+
+This is a Chrome extension for browsing publicly available bookmars on Delicious
+boorkmarking service. Browse can be done by account and tag.
+
+This repository holds the result of my first inmersion into chrome extensions
+developmente combined with the exploration of a REST API using JSON, to chich
+Delicious serves as great playground.
+
+It can be easily customized to any other REST services.
+
+Initially no authentication will be required since it is browse publicly
+available content.
