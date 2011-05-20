@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Delicious Chrome Browser</title>
+        <script type="text/javascript">
+
+// Saves options to localStorage.
+function save_options() {
+  var tbox = document.getElementById("account");
+  var _acct = tbox.value;
+  localStorage["_acct"] = _acct;
+
+  // Update status to let user know options were saved.
+  var status = document.getElementById("status");
+  status.innerHTML = "Options Saved.";
+  setTimeout(function() {
+    status.innerHTML = "";
+  }, 750);
+}
+
+// Restores select box state to saved value from localStorage.
+function restore_options() {
+  var result = localStorage["_acct"];
+  if (!result) {
+    return;
+  }
+}
+
+</script>
+
+    </head>
+    <body onload="restore_options()">
+        Here you will find some configurations for the Delicious Chrome Browser.
+        <br/>
+        <input type="text" id="account" name="account" />
+        <button onclick="save_options()">Save</button>
+    </body>
+</html>

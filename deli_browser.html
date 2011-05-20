@@ -20,10 +20,10 @@
     <body> 
         <form id="tagSelector" name="tagSelector">
             <label>Account:</label>
-            <input type="text" id="_acct" name="_acct" size=30>
+            <input type="text" id="_acct" name="_acct" size="30" onblur="getTags();">
             <br/>
-            <label>Tags:</label> <!-- TODO:Add autocomplete -->
-            <input type="text" id="_tag" name="_tag" size=30>
+            <label>Tags:</label>
+            <input type="text" id="_tag" name="_tag" size=30 onfocus"getTags();"> 
             <input type="button" id="go" name="go" value="Go" onclick="goDeli();">
         </form>
             <p>Delicious: <div id="delicious"></div></p>
