@@ -10,6 +10,7 @@
         <style>
             body {
               min-width:357px;
+              min-height:200px;
               overflow-x:hidden;
               background-color:lightgrey;
               font-size:1;
@@ -20,12 +21,16 @@
     <body> 
         <form id="tagSelector" name="tagSelector">
             <label>Account:</label>
-            <input type="text" id="_acct" name="_acct" size="30" onblur="getTags();">
+            <input type="text" disabled id="_acct" name="_acct" size="30" >
             <br/>
             <label>Tags:</label>
-            <input type="text" id="_tag" name="_tag" size=30 onfocus"getTags();"> 
+            <input type="text" id="_tag" name="_tag" size=30 > 
             <input type="button" id="go" name="go" value="Go" onclick="goDeli();">
         </form>
-            <p>Delicious: <div id="delicious"></div></p>
+        <p style="background:black;color:white">
+            Delicious: 
+            <font align="right" size=1><i>first 20 results</i></font>
+        </p>
+        <div id="delicious"></div>
     </body>
 </html>

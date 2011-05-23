@@ -1,17 +1,19 @@
 var ac_data;
-$(document).ready(function(){
-    if ($("#_acct").val() != "") {
-        getTags();
+$(document).ready(function dTags(){
+
+    var account = $("#_acct").val();
+    if (account == "") {
+        if (localStorage["default_account"] != "") {
+            account=localStorage["default_account"];
+        }
     }
-});
-
-
-function getTags() {
+    alert("Account:"+account);
+    if (account != "") {
+        $("#_acct").val(account);
         $.ajax({ type:      "GET",
                  dataType:  "jsonp",
                  url:       "http://feeds.delicious.com/v2/json/tags"+
-                            ($("#_acct").val() != "" ? "/"+$("#_acct").val() : "") +
-                            "?count=3000",
+                            "/"+account+"?count=3000",
                  success:   function(data) {
                                 $.each(data, function(key, val) {
                                     if (!ac_data) {
@@ -24,6 +26,14 @@ function getTags() {
                                 $("#_tag").autocomplete(ac_data.split(" "));
                             }
         });
+    }
+});
+
+/*
+ * Return the default delicious account as set in the options page.
+ */
+function getDefaultAccount() {
+    return localStorage["default_account"];
 }
 
 /*
