@@ -7,7 +7,7 @@ $(document).ready(function dTags(){
             account=localStorage["default_account"];
         }
     }
-    alert("Account:"+account);
+    
     if (account != "") {
         $("#_acct").val(account);
         $.ajax({ type:      "GET",
@@ -22,7 +22,7 @@ $(document).ready(function dTags(){
                                         ac_data += key + " ";
                                     }
                                 });
-                                //alert("1:"+ac_data);
+                                
                                 $("#_tag").autocomplete(ac_data.split(" "));
                             }
         });

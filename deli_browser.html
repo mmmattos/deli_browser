@@ -12,7 +12,7 @@
               min-width:357px;
               min-height:200px;
               overflow-x:hidden;
-              background-color:lightgrey;
+              background-color:lightblue;
               font-size:1;
               font-weight:bold;
             }
@@ -27,9 +27,13 @@
             <input type="text" id="_tag" name="_tag" size=30 > 
             <input type="button" id="go" name="go" value="Go" onclick="goDeli();">
         </form>
-        <p style="background:black;color:white">
+        <p style="background:darkblue;color:white">
             Delicious: 
-            <font align="right" size=1><i>first 20 results</i></font>
+            <div align="right">
+                <font align="right" size=1 style="color:blue">
+                    <i>first 20 results</i>
+                </font>
+            </div>
         </p>
         <div id="delicious"></div>
     </body>
