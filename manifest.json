@@ -1,13 +1,13 @@
 {
-  "name": "Chrome Delicious bookmarks Browser Extension",
+  "name": "Online Bookmarks Browser Extension",
   "version": "1.0",
   "description": "This extension allows for browsing any delicious account with public bookmarks.",
-  "icons": {  "16": "img/icon16.png",
-              "48": "img/icon48.png",
-             "128": "img/icon128.png" },
+  "icons": {  "16": "img/deli_browser_icon16.png",
+              "48": "img/deli_browser_icon48.png",
+             "128": "img/deli_browser_icon128.png" },
   "browser_action": {
-    "default_icon": "img/icon48.png",
-    "default_title": "Delicious chrome browser",
+    "default_icon": "img/deli_browser_icon48.png",
+    "default_title": "Online Bookmarks Browser Extension",
     "popup": "deli_browser.html"
   },
   "options_page": "settings.html",
