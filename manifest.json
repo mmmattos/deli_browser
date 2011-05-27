@@ -1,6 +1,6 @@
 {
   "name": "Online Bookmarks Browser Extension",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "This extension allows for browsing any delicious account with public bookmarks.",
   "icons": {  "16": "img/deli_browser_icon16.png",
               "48": "img/deli_browser_icon48.png",

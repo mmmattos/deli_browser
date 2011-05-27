@@ -23,7 +23,9 @@ $(document).ready(function dTags(){
                                     }
                                 });
                                 
-                                $("#_tag").autocomplete(ac_data.split(" "));
+                                $("#_tag").autocomplete(ac_data.split(" "),{
+                                    multiple: true,
+                                    multipleSeparator: " "});
                             }
         });
     }
