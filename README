@@ -4,9 +4,10 @@ This is a Chrome extension for browsing publicly available bookmars on Delicious
 boorkmarking service. Browse can be done by account and tag.
 
 Account is set in the Options page. 
-Tags can be combined with the plus sign. For instance, to search for bookmarks
-that have both the tag "movie" and "comedy", you need to specify "movie+comedy" 
-in the tag search field.
+Tags can be combined with a blank space. For instance, to search for bookmarks
+that have both the tag "movie" and "comedy", you need to specify "movie comedy" 
+in the tag search field. Notice the blank space between the two (or more) words.
+Autocomplete is provided for all terms typed.
 
 This repository holds the result of my first inmersion into chrome extensions
 developmente combined with the exploration of a REST API using JSON, javascript
