@@ -1,6 +1,7 @@
 var ac_data;
 $(document).ready(function dTags(){
 
+	$("#go").on("click", goDeli);
     var account = $("#_acct").val();
     if (account == "") {
         if (localStorage["default_account"] != "") {
@@ -12,7 +13,7 @@ $(document).ready(function dTags(){
         $("#_acct").val(account);
         $.ajax({ type:      "GET",
                  dataType:  "jsonp",
-                 url:       "http://feeds.delicious.com/v2/json/tags"+
+                 url:       "https://feeds.delicious.com/v2/json/tags"+
                             "/"+account+"?count=3000",
                  success:   function(data) {
                                 $.each(data, function(key, val) {
@@ -23,7 +24,7 @@ $(document).ready(function dTags(){
                                     }
                                 });
                                 
-                                $("#_tag").autocomplete(ac_data.split(" "),{
+                                $("#_tag").autocomplete({source: ac_data.split(" "),	
                                     multiple: true,
                                     multipleSeparator: " "});
                             }
@@ -39,12 +40,12 @@ function getDefaultAccount() {
 }
 
 /*
- * Get the urls from a Delicious accoutn for the given tags
+ * Get the urls from a Delicious account for the given tags
  */
 function goDeli(){
     $.ajax({ type:      "GET",
              dataType:  "jsonp",
-             url:       "http://feeds.delicious.com/v2/json"+
+             url:       "https://feeds.delicious.com/v2/json"+
                         "/"+($("#_acct").val() != "" ? $("#_acct").val() : "tag") + "/" +
                         $("#_tag").val()+
                         "?count=20",
